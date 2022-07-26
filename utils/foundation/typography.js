@@ -10,7 +10,7 @@ export const typography = {
   lineHeights: {
     none: 1,
     short: 1.2,
-    base: 1.3,
+    base: 1.5,
   },
 
   fontWeights: {
@@ -19,16 +19,15 @@ export const typography = {
   },
 
   fonts: {
-    heading: `"Leitura", “Didot”, "Times New Roman", Times, serif`,
-    body: `"Nitti Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    heading: `'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
+    body: `'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
   },
 
   fontSizes: {
-    sm: clamp(16, 20),
-    md: clamp(16, 24),
-    lg: clamp(18, 48),
-    xl: clamp(24, 80),
-    '2xl': clamp(32, 110, 'xs', '2xl'),
-    '3xl': clamp(48, 195),
+    sm: clamp(10, 10),
+    md: clamp(14, 14),
+    lg: clamp(22, 22),
   },
 };

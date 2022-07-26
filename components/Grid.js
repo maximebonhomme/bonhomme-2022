@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Grid as ChakraGrid } from '@chakra-ui/react';
-import { clamp } from 'utils/foundation/clamp';
+import { clamp } from '../utils/foundation/clamp';
 
 export const gridGap = {
   min: 12,

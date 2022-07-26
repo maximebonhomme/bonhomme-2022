@@ -1,12 +1,8 @@
 import { extendTheme } from '@chakra-ui/react';
-import { fontBody, fontHeading } from './fonts';
-
 import { foundations } from './foundation';
 
 const config = {
-  useSystemColorMode: false,
-  initialColorMode: 'light',
-  cssVarPrefix: 'andopen',
+  cssVarPrefix: 'bonhomme',
 };
 
 export const theme = extendTheme({
@@ -14,21 +10,36 @@ export const theme = extendTheme({
   ...foundations,
   styles: {
     global: {
+      'html, body': {
+        color: 'whiteAlpha.700',
+        bg: 'black.500',
+        fontSize: 'md',
+      },
       '.js-focus-visible :focus:not([data-focus-visible-added])': {
         outline: 'none',
         boxShadow: 'none',
       },
-      html: {
-        // scrollPaddingTop: foundations.space.xl,
-        scrollBehavior: 'smooth',
+      a: {
+        color: 'whiteAlpha.500',
       },
-      body: {
-        fontFamily: fontBody,
-        overflowX: 'hidden',
+    },
+  },
+  components: {
+    Heading: {
+      baseStyle: {
+        fontWeight: '400',
+        color: 'white.500',
       },
-      heading: {
-        fontFamily: fontHeading,
-        fontWeight: foundations.fontWeights.normal,
+      sizes: {
+        lg: {
+          fontSize: 'lg',
+        },
+        md: {
+          fontSize: 'md',
+        },
+        sm: {
+          fontSize: 'sm',
+        },
       },
     },
   },
