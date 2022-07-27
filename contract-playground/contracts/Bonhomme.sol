@@ -1,10 +1,18 @@
-//SPDX-License-Identifier: MIT
-pragma solidity ^0.8.11;
+// SPDX-License-Identifier: CC0
+pragma solidity ^0.8.14;
 
-import './SVG.sol';
+// Name: Bonhomme 3x3
+// Description: Generative 3x3 grid free to mint
+// Twitter: @pixel_arts
+// Build: himlate.eth
+// Using to HotChainSVG: 0xa7988c8abb7706e024a8f2a1328e376227aaad18
+
+import 'erc721a/contracts/ERC721A.sol';
 import './Utils.sol';
+import './SVG.sol';
+import './Base64.sol';
 
-contract Renderer {
+contract Tamiko is ERC721A {
     string[9] public colors = [
         '#9b51e0',
         '#2f80ed',
@@ -17,6 +25,26 @@ contract Renderer {
         '#ff86dd'
     ];
     uint256 public constant PX_SIZE = 300;
+
+    mapping(address => bool) public hasAddressMinted;
+    mapping(uint256 => address) public seeds;
+
+    constructor() ERC721A('bonhomme.lol', 'BONHOMME') {}
+
+    error OnlyOneMintAllowed();
+
+    modifier hasNeverMinted() {
+        if (hasAddressMinted[msg.sender] == true) revert OnlyOneMintAllowed();
+        _;
+    }
+
+    function mint() external payable hasNeverMinted {
+        uint256 _currentTokenId = _nextTokenId();
+
+        _mint(msg.sender, 1);
+        hasAddressMinted[msg.sender] = true;
+        seeds[_currentTokenId] = msg.sender;
+    }
 
     function getShape(
         uint256 _seed,
@@ -91,10 +119,39 @@ contract Renderer {
             );
     }
 
-    function example() external view returns (string memory) {
-        uint256 seed = uint256(
-            uint160(0x046B29FBDA91F7586c5a5dF1DB5B046A6826b10D)
-        );
-        return render(seed);
+    function tokenURI(uint256 _tokenId)
+        public
+        view
+        override
+        returns (string memory)
+    {
+        uint256 seed = uint256(uint160(seeds[_tokenId]));
+
+        return
+            string(
+                abi.encodePacked(
+                    'data:application/json;base64,',
+                    Base64.encode(
+                        bytes(
+                            abi.encodePacked(
+                                '{"name":"Bonhomme 3x3 #',
+                                utils.uint2str(_tokenId),
+                                '", "description":"Bonhomme is a collection of generated 3x3 grids representing your wallet address. Only one per wallet. Free.", ',
+                                '"attributes": [{"trait_type": "seed", "value": "',
+                                utils.uint2str(seed),
+                                '"}]',
+                                ', "image":"',
+                                string(
+                                    abi.encodePacked(
+                                        'data:image/svg+xml;base64,',
+                                        Base64.encode(bytes(render(seed)))
+                                    )
+                                ),
+                                '"}'
+                            )
+                        )
+                    )
+                )
+            );
     }
 }
