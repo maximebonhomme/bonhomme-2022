@@ -17,7 +17,7 @@ import {
 } from 'wagmi';
 import ABI from '../contract-playground/abi/bonhommeABI.json';
 
-const contractAddress = '0x722784B2143C5A2f9B8b4c35F3052A73c335fcD9';
+const contractAddress = '0x54d0F426943229C2D533D9634A855464faCe14ff';
 
 export const MintModal = ({ name, isOpen, onClose }) => {
   const [isLoading, setLoading] = useState(false);
@@ -100,9 +100,23 @@ export const MintModal = ({ name, isOpen, onClose }) => {
             >
               {hasMinted ? 'You already minted one' : 'Mint for free'}
             </Button>
-            <Link opacity={0.7} href="https://etherscan.io/" fontSize="12px">
-              view contract
-            </Link>
+            {data?.hash ? (
+              <Link
+                opacity={0.7}
+                href={`https://etherscan.io/tx/${data?.hash}`}
+                fontSize="12px"
+              >
+                view transaction
+              </Link>
+            ) : (
+              <Link
+                opacity={0.7}
+                href={`https://rinkeby.etherscan.io/address/${contractAddress}`}
+                fontSize="12px"
+              >
+                view contract
+              </Link>
+            )}
           </>
         )}
       </ModalContent>
