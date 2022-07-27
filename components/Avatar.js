@@ -25,12 +25,14 @@ export const Avatar = () => {
 
   return (
     <>
-      <MintModal
-        name={ensName || trimAddress(address)}
-        isOpen={isOpen}
-        onOpen={onOpen}
-        onClose={onClose}
-      />
+      {address && (
+        <MintModal
+          name={ensName || trimAddress(address)}
+          isOpen={isOpen}
+          onOpen={onOpen}
+          onClose={onClose}
+        />
+      )}
       <Box
         as="button"
         onClick={onOpen}
