@@ -53,6 +53,7 @@ export default function Home() {
         </Heading>
 
         <Experience
+          href="https://everpress.com/"
           side="2020 - 2022"
           title="Full Stack & Technical Lead – Everpress"
           desc="Led a team of 5 engineers to develop our creator tools and e-commerce
@@ -67,6 +68,7 @@ export default function Home() {
           stack="React • Redux/Context • PIXI.js • Three.js"
         />
         <Experience
+          href="https://neverbland.com/"
           side="2014 – 2016"
           title="Front End Engineer – NEVERBLAND"
           desc="Part of a tight-knit team of designers, developers and critical thinkers, I built MVP products and marketing experiences for start-ups."
