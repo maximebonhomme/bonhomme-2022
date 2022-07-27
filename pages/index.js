@@ -30,7 +30,7 @@ export default function Home() {
         />
       </Box>
 
-      <Box py="130px" maxWidth={490} mx="auto">
+      <Box py="130px" px={4} maxWidth={490} mx="auto">
         <Grid
           fluid
           templateColumns="repeat(4, 1fr)"
@@ -45,14 +45,14 @@ export default function Home() {
             >
               <Image
                 position="absolute"
-                width="120%"
+                width="125%"
                 src="/blurs.png"
                 role="presentation"
                 animation={`${spin} infinite 5s linear`}
               />
               <Image
                 borderRadius="full"
-                width="85%"
+                width="80%"
                 src="/profile.png"
                 alt="Bonhomme"
               />

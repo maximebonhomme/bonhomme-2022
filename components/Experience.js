@@ -12,10 +12,10 @@ export const Experience = ({
   ...props
 }) => (
   <Grid fluid templateColumns="repeat(4, 1fr)" mb={10} {...props}>
-    <GridItem colSpan={1}>
+    <GridItem colSpan={{ base: 4, sm: 1 }}>
       <Text>{side}</Text>
     </GridItem>
-    <GridItem colSpan={3}>
+    <GridItem colSpan={{ base: 4, sm: 3 }}>
       {image && <Image width="36px" mb={4} src={image} alt={title} />}
       <Heading as={href ? 'a' : 'h3'} href={href} size="md">
         {title}

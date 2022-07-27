@@ -3,7 +3,7 @@ import { Grid as ChakraGrid } from '@chakra-ui/react';
 import { clamp } from '../utils/foundation/clamp';
 
 export const gridGap = {
-  min: 12,
+  min: 4,
   max: 24,
 };
 
