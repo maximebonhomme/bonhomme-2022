@@ -12,7 +12,7 @@ import './Utils.sol';
 import './SVG.sol';
 import './Base64.sol';
 
-contract Tamiko is ERC721A {
+contract Bonhomme is ERC721A {
     string[9] public colors = [
         '#9b51e0',
         '#2f80ed',
