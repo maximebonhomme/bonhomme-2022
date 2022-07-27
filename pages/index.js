@@ -62,20 +62,20 @@ export default function Home() {
           desc="Led a team of 5 engineers to develop our creator tools and e-commerce
         app. Collaborated closely with the Head of Product to track our tactical
         objectives, improve technical directions and shipping frequency."
-          stack="React • Redux • Symphony • AWS"
+          stack="React • Redux • Symfony • AWS"
         />
         <Experience
           side="2016 – 2020"
           title="Front End Engineer – Freelance"
           desc="Worked with a range of large and small agencies, start-ups and individuals to build products. Clients included Marvel App, United Nations, Netflix, Dropbox Design."
-          stack="React • Redux/Context • PIXI.js • Three.js"
+          stack="React • Redux • Styled Components • Framer Motion"
         />
         <Experience
           href="https://neverbland.com/"
           side="2014 – 2016"
           title="Front End Engineer – NEVERBLAND"
           desc="Part of a tight-knit team of designers, developers and critical thinkers, I built MVP products and marketing experiences for start-ups."
-          stack="React • Redux/Context • PIXI.js • Three.js"
+          stack="React • Redux • CSSModules • Three.js"
         />
 
         <Heading as="h2" size="md" mt={14} mb={10}>

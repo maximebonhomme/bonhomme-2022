@@ -35,7 +35,10 @@ const Cursor = () => {
       }
 
       setMousePosition(
-        getRelativeCoordinates({ pageX: elX, pageY: elY }, boxRef.current)
+        getRelativeCoordinates({ pageX: elX, pageY: elY }, boxRef.current, {
+          x: 20,
+          y: 20,
+        })
       );
     }
   }, [elX, elY, boxRef]);
@@ -59,7 +62,7 @@ const Cursor = () => {
         as={motion.div}
         position="absolute"
         alignItems="center"
-        bg="whiteAlpha.300"
+        bg="whiteAlpha.200"
         borderRadius="xl"
         px={3}
         py={1}
@@ -68,7 +71,7 @@ const Cursor = () => {
           x: mousePosition.x,
           y: mousePosition.y,
         }}
-        transition={{ type: 'spring', stiffness: 100, mass: 0.5 }}
+        transition={{ type: 'spring', stiffness: 20, mass: 0.9 }}
         style={{
           opacity: isVisible ? 1 : 0,
         }}

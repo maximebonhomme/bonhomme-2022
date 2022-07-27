@@ -1,7 +1,11 @@
-export function getRelativeCoordinates(event, referenceElement) {
+export function getRelativeCoordinates(
+  event,
+  referenceElement,
+  customOffset = { x: 0, y: 0 }
+) {
   const position = {
-    x: event.pageX,
-    y: event.pageY,
+    x: event.pageX + customOffset.x,
+    y: event.pageY + customOffset.y,
   };
 
   const offset = {
