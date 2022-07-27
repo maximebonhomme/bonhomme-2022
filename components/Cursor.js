@@ -21,14 +21,13 @@ const Cursor = () => {
   const boxRef = useRef();
   const { elX, elY } = useMouse(boxRef);
   const isMobile = width <= 768;
-  const isRdy = address && !isMobile && hasMounted;
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    if (boxRef.current && isRdy) {
+    if (boxRef.current) {
       if (elX || elY) {
         setVisibility(true);
       } else {
@@ -39,9 +38,9 @@ const Cursor = () => {
         getRelativeCoordinates({ pageX: elX, pageY: elY }, boxRef.current)
       );
     }
-  }, [elX, elY, boxRef, isRdy]);
+  }, [elX, elY, boxRef]);
 
-  if (!isRdy) return false;
+  if (isMobile || !address || !hasMounted) return false;
 
   return (
     <Box
@@ -66,10 +65,10 @@ const Cursor = () => {
         py={1}
         pl={ensAvatar ? 1 : 3}
         animate={{
-          x: mousePosition.x + 20,
-          y: mousePosition.y + 20,
+          x: mousePosition.x,
+          y: mousePosition.y,
         }}
-        transition={{ type: 'spring', stiffness: 0, mass: 1 }}
+        transition={{ type: 'spring', stiffness: 100, mass: 0.5 }}
         style={{
           opacity: isVisible ? 1 : 0,
         }}
