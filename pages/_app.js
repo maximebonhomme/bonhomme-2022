@@ -9,15 +9,17 @@ import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { theme } from '../utils/theme';
-import '../styles/globals.css';
+// eslint-disable-next-line import/no-unresolved
 import '@rainbow-me/rainbowkit/styles.css';
+import Cursor from '../components/Cursor';
+import '../styles/globals.css';
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
   [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
 );
 const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
+  appName: 'Bonhomme',
   chains,
 });
 const wagmiClient = createClient({
@@ -31,6 +33,7 @@ export default function App({ Component, pageProps }) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains} theme={darkTheme()}>
         <ChakraProvider theme={theme}>
+          <Cursor />
           <Component {...pageProps} />
         </ChakraProvider>
       </RainbowKitProvider>
