@@ -17,7 +17,7 @@ export const Experience = ({
     </GridItem>
     <GridItem colSpan={3}>
       {image && <Image width="36px" mb={4} src={image} alt={title} />}
-      <Heading as="h3" size="md">
+      <Heading as={href ? 'a' : 'h3'} href={href} size="md">
         {title}
       </Heading>
       {desc && <Text my={2}>{desc}</Text>}

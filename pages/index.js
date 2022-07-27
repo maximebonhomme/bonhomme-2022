@@ -85,6 +85,7 @@ export default function Home() {
           stack="Solidity • ERC721 • ERC1155 • Next.js"
         />
         <Experience
+          href="https://kineticspectru.ms/"
           image="/kineticspectrum.png"
           side="Ongoing"
           title="Kinetic Spectrums"
@@ -100,25 +101,25 @@ export default function Home() {
           side="Github"
           title="@maximebonhomme"
           href="https://github.com/maximebonhomme"
-          mb={2}
+          mb={4}
         />
         <Experience
           side="Etherscan"
           title="himlate.eth"
           href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
-          mb={2}
+          mb={4}
         />
         <Experience
           side="Foundation"
           title="@bonhomme"
           href="https://foundation.app/@bonhomme?tab=owned"
-          mb={2}
+          mb={4}
         />
         <Experience
           side="Twitter"
           title="@pixel_arts"
           href="https://twitter.com/pixel_arts"
-          mb={2}
+          mb={4}
         />
       </Box>
     </Box>
