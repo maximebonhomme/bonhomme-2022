@@ -11,7 +11,6 @@ import { publicProvider } from 'wagmi/providers/public';
 import { theme } from '../utils/theme';
 // eslint-disable-next-line import/no-unresolved
 import '@rainbow-me/rainbowkit/styles.css';
-import Cursor from '../components/Cursor';
 import '../styles/globals.css';
 
 const { chains, provider } = configureChains(
@@ -33,7 +32,6 @@ export default function App({ Component, pageProps }) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains} theme={darkTheme()}>
         <ChakraProvider theme={theme}>
-          <Cursor />
           <Component {...pageProps} />
         </ChakraProvider>
       </RainbowKitProvider>

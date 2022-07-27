@@ -2,15 +2,18 @@ import { Link, Box, Text, Heading, Image, GridItem } from '@chakra-ui/react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Grid } from '../components/Grid';
 import { Experience } from '../components/Experience';
+import Cursor from '../components/Cursor';
 
 export default function Home() {
   return (
     <Box py="130px" maxWidth={490} mx="auto">
+      <Cursor />
       <ConnectButton
         accountStatus="address"
         chainStatus="none"
         showBalance={false}
       />
+
       <Grid fluid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
         <GridItem colSpan={1}>
           <Box borderRadius="full" overflow="hidden">

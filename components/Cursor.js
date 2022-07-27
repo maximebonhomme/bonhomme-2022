@@ -7,6 +7,7 @@ import { trimAddress } from '../utils/address';
 import { getRelativeCoordinates } from '../utils/coords';
 
 const Cursor = () => {
+  const [hasMounted, setMounted] = useState(false);
   const { width } = useWindowSize();
   const { address } = useAccount();
   const { data: ensName } = useEnsName({
@@ -17,9 +18,14 @@ const Cursor = () => {
   const boxRef = useRef();
   const { elX, elY } = useMouse(boxRef);
   const isMobile = width <= 768;
+  const isRdy = address && !isMobile && hasMounted;
 
   useEffect(() => {
-    if (boxRef.current) {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (boxRef.current && isRdy) {
       if (elX || elY) {
         setVisibility(true);
       } else {
@@ -30,9 +36,9 @@ const Cursor = () => {
         getRelativeCoordinates({ pageX: elX, pageY: elY }, boxRef.current)
       );
     }
-  }, [elX, elY, boxRef]);
+  }, [elX, elY, boxRef, isRdy]);
 
-  if (!address || isMobile) return false;
+  if (!isRdy) return false;
 
   return (
     <Box
@@ -51,7 +57,7 @@ const Cursor = () => {
           x: mousePosition.x,
           y: mousePosition.y,
         }}
-        transition={{ type: 'spring', stiffness: 80, mass: 0.2 }}
+        transition={{ type: 'spring', stiffness: 0, mass: 1 }}
         style={{
           opacity: isVisible ? 1 : 0,
         }}
