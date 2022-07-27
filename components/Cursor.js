@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Box } from '@chakra-ui/react';
-import { useEnsName, useAccount } from 'wagmi';
+import { Box, Flex, Image } from '@chakra-ui/react';
+import { useEnsName, useEnsAvatar, useAccount } from 'wagmi';
 import { motion } from 'framer-motion';
 import { useMouse, useWindowSize } from 'react-use';
 import { trimAddress } from '../utils/address';
@@ -12,6 +12,9 @@ const Cursor = () => {
   const { address } = useAccount();
   const { data: ensName } = useEnsName({
     address,
+  });
+  const { data: ensAvatar } = useEnsAvatar({
+    addressOrName: address,
   });
   const [mousePosition, setMousePosition] = useState({});
   const [isVisible, setVisibility] = useState(false);
@@ -49,21 +52,40 @@ const Cursor = () => {
       left={0}
       width="full"
       height="full"
+      color="white"
+      fontSize="sm"
+      textTransform="uppercase"
     >
-      <Box
+      <Flex
         as={motion.div}
         position="absolute"
+        alignItems="center"
+        bg="whiteAlpha.300"
+        borderRadius="xl"
+        px={3}
+        py={1}
+        pl={ensAvatar ? 1 : 3}
         animate={{
-          x: mousePosition.x,
-          y: mousePosition.y,
+          x: mousePosition.x + 20,
+          y: mousePosition.y + 20,
         }}
         transition={{ type: 'spring', stiffness: 0, mass: 1 }}
         style={{
           opacity: isVisible ? 1 : 0,
         }}
       >
+        {ensAvatar && (
+          <Image
+            width="16px"
+            height="16px"
+            borderRadius="full"
+            src={ensAvatar}
+            alt={address}
+            mr={2}
+          />
+        )}
         {ensName || trimAddress(address)}
-      </Box>
+      </Flex>
     </Box>
   );
 };
