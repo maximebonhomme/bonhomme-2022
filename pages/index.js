@@ -1,42 +1,42 @@
-import {
-  Link,
-  Box,
-  Flex,
-  Text,
-  Heading,
-  Image,
-  GridItem,
-} from '@chakra-ui/react';
+import { Link, Box, Text, Heading, Image, GridItem } from '@chakra-ui/react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Grid } from '../components/Grid';
 import { Experience } from '../components/Experience';
 
 export default function Home() {
   return (
     <Box py="130px" maxWidth={490} mx="auto">
-      <Flex mb={9} alignItems="center">
-        <Box borderRadius="full" overflow="hidden">
-          <Image
-            mr={8}
-            borderRadius="full"
-            width="90px"
-            height="90px"
-            src="/profile.png"
-            alt="Bonhomme"
-          />
-        </Box>
-        <Box>
-          <Heading as="h1" size="lg">
-            Maxime Bonhomme
-          </Heading>
-          <Text>Product-focused Fullstack Developer</Text>
-          <Link
-            opacity={0.5}
-            href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
-          >
-            himlate.eth
-          </Link>
-        </Box>
-      </Flex>
+      <ConnectButton
+        accountStatus="address"
+        chainStatus="none"
+        showBalance={false}
+      />
+      <Grid fluid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
+        <GridItem colSpan={1}>
+          <Box borderRadius="full" overflow="hidden">
+            <Image
+              borderRadius="full"
+              width="full"
+              src="/profile.png"
+              alt="Bonhomme"
+            />
+          </Box>
+        </GridItem>
+        <GridItem colSpan={3}>
+          <Box>
+            <Heading as="h1" size="lg">
+              Maxime Bonhomme
+            </Heading>
+            <Text>Product-focused Fullstack Developer</Text>
+            <Link
+              opacity={0.5}
+              href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
+            >
+              himlate.eth
+            </Link>
+          </Box>
+        </GridItem>
+      </Grid>
       <Box mb={14}>
         <Heading as="h2" size="md" mb={2}>
           About
@@ -53,22 +53,22 @@ export default function Home() {
         </Heading>
 
         <Experience
-          year="2020 - 2022"
-          position="Full Stack & Technical Lead – Everpress"
+          side="2020 - 2022"
+          title="Full Stack & Technical Lead – Everpress"
           desc="Led a team of 5 engineers to develop our creator tools and e-commerce
         app. Collaborated closely with the Head of Product to track our tactical
         objectives, improve technical directions and shipping frequency."
           stack="React • Redux • Symphony • AWS"
         />
         <Experience
-          year="2016 – 2020"
-          position="Front End Engineer – Freelance"
+          side="2016 – 2020"
+          title="Front End Engineer – Freelance"
           desc="Worked with a range of large and small agencies, start-ups and individuals to build products. Clients included Marvel App, United Nations, Netflix, Dropbox Design."
           stack="React • Redux/Context • PIXI.js • Three.js"
         />
         <Experience
-          year="2014 – 2016"
-          position="Front End Engineer – NEVERBLAND"
+          side="2014 – 2016"
+          title="Front End Engineer – NEVERBLAND"
           desc="Part of a tight-knit team of designers, developers and critical thinkers, I built MVP products and marketing experiences for start-ups."
           stack="React • Redux/Context • PIXI.js • Three.js"
         />
@@ -78,10 +78,47 @@ export default function Home() {
         </Heading>
 
         <Experience
-          year="Ongoing"
-          position="Tamiko"
+          image="/tamiko.svg"
+          side="Ongoing"
+          title="Tamiko"
           desc="Tamiko are non-fungible friends that live completely on-chain. You can hatch, feed, breed and evolve them."
           stack="Solidity • ERC721 • ERC1155 • Next.js"
+        />
+        <Experience
+          image="/kineticspectrum.png"
+          side="Ongoing"
+          title="Kinetic Spectrums"
+          desc="Generative on-chain NFTs. A collection of dynamic, ever changing artworks."
+          stack="Solidity • ERC721 • Next.js"
+        />
+
+        <Heading as="h2" size="md" mt={14} mb={10}>
+          Links
+        </Heading>
+
+        <Experience
+          side="Github"
+          title="@maximebonhomme"
+          href="https://github.com/maximebonhomme"
+          mb={2}
+        />
+        <Experience
+          side="Etherscan"
+          title="himlate.eth"
+          href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
+          mb={2}
+        />
+        <Experience
+          side="Foundation"
+          title="@bonhomme"
+          href="https://foundation.app/@bonhomme?tab=owned"
+          mb={2}
+        />
+        <Experience
+          side="Twitter"
+          title="@pixel_arts"
+          href="https://twitter.com/pixel_arts"
+          mb={2}
         />
       </Box>
     </Box>

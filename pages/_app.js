@@ -10,6 +10,7 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { theme } from '../utils/theme';
 import '../styles/globals.css';
+import '@rainbow-me/rainbowkit/styles.css';
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
