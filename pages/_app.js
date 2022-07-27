@@ -14,7 +14,8 @@ import '@rainbow-me/rainbowkit/styles.css';
 import '../styles/globals.css';
 
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+  // [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+  [chain.rinkeby],
   [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
 );
 const { connectors } = getDefaultWallets({

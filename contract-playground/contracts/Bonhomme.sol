@@ -134,7 +134,7 @@ contract Bonhomme is ERC721A {
                     Base64.encode(
                         bytes(
                             abi.encodePacked(
-                                '{"name":"Bonhomme 3x3 #',
+                                '{"name":"Bonhomme #',
                                 utils.uint2str(_tokenId),
                                 '", "description":"Bonhomme is a collection of generated 3x3 grids representing your wallet address. Only one per wallet. Free.", ',
                                 '"attributes": [{"trait_type": "seed", "value": "',
