@@ -95,7 +95,7 @@ export const MintModal = ({ name, isOpen, onClose }) => {
               mb={2}
               onClick={mint}
               isLoading={isLoading}
-              disabled={hasMinted}
+              disabled={readMintedLoading || hasMinted}
             >
               {hasMinted ? 'You already minted one' : 'Mint for free'}
             </Button>
