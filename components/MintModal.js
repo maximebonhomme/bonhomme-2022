@@ -17,19 +17,20 @@ import {
 } from 'wagmi';
 import ABI from '../contract-playground/abi/bonhommeABI.json';
 
+const contractAddress = '0x722784B2143C5A2f9B8b4c35F3052A73c335fcD9';
+
 export const MintModal = ({ name, isOpen, onClose }) => {
   const [isLoading, setLoading] = useState(false);
   const [isSuccess, setSuccess] = useState(false);
   const { address } = useAccount();
   const { config } = usePrepareContractWrite({
-    addressOrName: '0x37421671413FE782b8C953f59e982461638AEbee',
+    addressOrName: contractAddress,
     contractInterface: ABI,
     functionName: 'mint',
-    enabled: false,
   });
   const { data, write: mint } = useContractWrite(config);
   const { data: hasMinted, isLoading: readMintedLoading } = useContractRead({
-    addressOrName: '0x37421671413FE782b8C953f59e982461638AEbee',
+    addressOrName: contractAddress,
     contractInterface: ABI,
     functionName: 'hasAddressMinted',
     args: address,
@@ -107,4 +108,10 @@ export const MintModal = ({ name, isOpen, onClose }) => {
       </ModalContent>
     </Modal>
   );
+};
+
+MintModal.propTypes = {
+  name: PropTypes.string,
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
 };
