@@ -1,22 +1,9 @@
-import {
-  Link,
-  Box,
-  Text,
-  Heading,
-  Image,
-  GridItem,
-  Flex,
-  keyframes,
-} from '@chakra-ui/react';
+import { Link, Box, Text, Heading, GridItem } from '@chakra-ui/react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Grid } from '../components/Grid';
 import { Experience } from '../components/Experience';
 import Cursor from '../components/Cursor';
-
-const spin = keyframes`
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg)}
-`;
+import { Avatar } from '../components/Avatar';
 
 export default function Home() {
   return (
@@ -38,25 +25,7 @@ export default function Home() {
           alignItems="center"
         >
           <GridItem colSpan={1}>
-            <Flex
-              alignItems="center"
-              justifyContent="center"
-              position="relative"
-            >
-              <Image
-                position="absolute"
-                width="125%"
-                src="/blurs.png"
-                role="presentation"
-                animation={`${spin} infinite 5s linear`}
-              />
-              <Image
-                borderRadius="full"
-                width="80%"
-                src="/profile.png"
-                alt="Bonhomme"
-              />
-            </Flex>
+            <Avatar />
           </GridItem>
           <GridItem colSpan={3}>
             <Box>
