@@ -49,6 +49,7 @@ const Cursor = () => {
     <Box
       ref={boxRef}
       position="fixed"
+      zIndex="overlay"
       pointerEvents="none"
       top={0}
       left={0}
@@ -62,7 +63,7 @@ const Cursor = () => {
         as={motion.div}
         position="absolute"
         alignItems="center"
-        bg="whiteAlpha.200"
+        bg="#191919"
         borderRadius="xl"
         px={3}
         py={1}
@@ -71,7 +72,7 @@ const Cursor = () => {
           x: mousePosition.x,
           y: mousePosition.y,
         }}
-        transition={{ type: 'spring', stiffness: 20, mass: 0.9 }}
+        transition={{ type: 'spring', bounce: 0.01 }}
         style={{
           opacity: isVisible ? 1 : 0,
         }}

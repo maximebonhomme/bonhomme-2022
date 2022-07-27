@@ -1,5 +1,4 @@
 import { Link, Box, Text, Heading, GridItem } from '@chakra-ui/react';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Grid } from '../components/Grid';
 import { Experience } from '../components/Experience';
 import Cursor from '../components/Cursor';
@@ -9,15 +8,8 @@ export default function Home() {
   return (
     <>
       <Cursor />
-      <Box ml="auto">
-        <ConnectButton
-          accountStatus="address"
-          chainStatus="none"
-          showBalance={false}
-        />
-      </Box>
 
-      <Box py="130px" px={4} maxWidth={490} mx="auto">
+      <Box py={16} px={4} maxWidth={490} mx="auto">
         <Grid
           fluid
           templateColumns="repeat(4, 1fr)"
