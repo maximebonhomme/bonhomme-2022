@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Box, Flex, Image } from '@chakra-ui/react';
 import { useEnsName, useEnsAvatar, useAccount } from 'wagmi';
-import { motion } from 'framer-motion';
 import { useMouse, useWindowSize } from 'react-use';
 import { trimAddress } from '../utils/address';
 import { getRelativeCoordinates } from '../utils/coords';
@@ -60,7 +59,7 @@ const Cursor = () => {
       textTransform="uppercase"
     >
       <Flex
-        as={motion.div}
+        // as={motion.div}
         position="absolute"
         alignItems="center"
         bg="white"
@@ -71,11 +70,8 @@ const Cursor = () => {
         px={3}
         py={1}
         pl={ensAvatar ? 1 : 3}
-        animate={{
-          x: mousePosition.x,
-          y: mousePosition.y,
-        }}
-        transition={{ ease: 'easeOut', duration: 2 }}
+        left={mousePosition.x}
+        top={mousePosition.y}
         style={{
           opacity: isVisible ? 1 : 0,
         }}
