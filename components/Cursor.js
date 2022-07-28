@@ -49,7 +49,7 @@ const Cursor = () => {
     <Box
       ref={boxRef}
       position="fixed"
-      zIndex="overlay"
+      zIndex={9999}
       pointerEvents="none"
       top={0}
       left={0}
@@ -63,8 +63,11 @@ const Cursor = () => {
         as={motion.div}
         position="absolute"
         alignItems="center"
-        bg="#191919"
+        bg="white"
+        color="black"
         borderRadius="xl"
+        boxShadow="0px 2px 4px rgba(0, 0, 0, 0.1)"
+        fontWeight="semibold"
         px={3}
         py={1}
         pl={ensAvatar ? 1 : 3}
