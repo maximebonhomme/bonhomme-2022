@@ -3,7 +3,6 @@ import { Box, Flex, Image } from '@chakra-ui/react';
 import { useEnsName, useEnsAvatar, useAccount } from 'wagmi';
 import { useMouse, useWindowSize } from 'react-use';
 import { trimAddress } from '../utils/address';
-import { getRelativeCoordinates } from '../utils/coords';
 
 const Cursor = () => {
   const [hasMounted, setMounted] = useState(false);
@@ -15,7 +14,6 @@ const Cursor = () => {
   const { data: ensAvatar } = useEnsAvatar({
     addressOrName: address,
   });
-  const [mousePosition, setMousePosition] = useState({});
   const [isVisible, setVisibility] = useState(false);
   const boxRef = useRef();
   const { elX, elY } = useMouse(boxRef);
@@ -32,13 +30,6 @@ const Cursor = () => {
       } else {
         setVisibility(false);
       }
-
-      setMousePosition(
-        getRelativeCoordinates({ pageX: elX, pageY: elY }, boxRef.current, {
-          x: 5,
-          y: 20,
-        })
-      );
     }
   }, [elX, elY, boxRef]);
 
@@ -70,8 +61,7 @@ const Cursor = () => {
         px={3}
         py={1}
         pl={ensAvatar ? 1 : 3}
-        left={mousePosition.x}
-        top={mousePosition.y}
+        transform={`translate(${elX + 5}px, ${elY + 20}px)`}
         style={{
           opacity: isVisible ? 1 : 0,
         }}
