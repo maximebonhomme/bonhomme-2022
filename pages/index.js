@@ -68,7 +68,7 @@ export default function Home() {
           <Experience
             href="https://neverbland.com/"
             side="2014 – 2016"
-            title="Front End Engineer – NEVERBLAND"
+            title="Front End Engineer – Neverbland"
             desc="Part of a tight-knit team of designers, developers and critical thinkers, I built MVP products and marketing experiences for start-ups."
             stack="React • Redux • CSSModules • Three.js"
           />

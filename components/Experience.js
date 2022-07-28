@@ -19,8 +19,22 @@ export const Experience = ({
     </GridItem>
     <GridItem colSpan={{ base: 4, sm: 3 }}>
       {image && <Image width="36px" mb={4} src={image} alt={title} />}
-      <Heading as={href ? 'a' : 'h3'} href={href} size="md">
+      <Heading
+        as={href ? 'a' : 'h3'}
+        href={href}
+        size="md"
+        display="flex"
+        alignItems="center"
+      >
         {title}
+        {href && (
+          <Image
+            ml={2}
+            src="/arrow-link.svg"
+            alt={`link to ${title}`}
+            transform="translateY(1px)"
+          />
+        )}
       </Heading>
       {desc && <Text my={2}>{desc}</Text>}
       {stack && (
