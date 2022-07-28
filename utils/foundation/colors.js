@@ -32,4 +32,5 @@ export const colors = {
   white: generateColourPalette('#fff'),
   purple: generateColourPalette('#9b51e0'),
   pink: generateColourPalette('#ff86dd'),
+  blue: generateColourPalette('#2F80ED'),
 };

@@ -42,14 +42,13 @@ export const Header = () => {
           role="button"
           textTransform="uppercase"
           px={3}
-          border="1px solid"
-          borderColor="pink.500"
-          color="pink.500"
+          color="white"
           borderRadius="lg"
-          bg="transparent"
+          bg="blue.500"
           fontSize="sm"
+          fontWeight="semibold"
           transition="0.1s"
-          _hover={{ borderColor: 'purple.500', color: 'purple.500' }}
+          _hover={{ bg: 'blue.700' }}
         >
           <Box as="span" position="relative" zIndex={10}>
             Connect Wallet
