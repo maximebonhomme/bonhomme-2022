@@ -36,7 +36,7 @@ const Cursor = () => {
 
       setMousePosition(
         getRelativeCoordinates({ pageX: elX, pageY: elY }, boxRef.current, {
-          x: 20,
+          x: 5,
           y: 20,
         })
       );
@@ -75,7 +75,7 @@ const Cursor = () => {
           x: mousePosition.x,
           y: mousePosition.y,
         }}
-        transition={{ type: 'spring', bounce: 0.01 }}
+        transition={{ ease: 'easeOut', duration: 2 }}
         style={{
           opacity: isVisible ? 1 : 0,
         }}
