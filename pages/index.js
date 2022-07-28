@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Cursor />
 
-      <Box py={16} px={4} maxWidth={500} mx="auto">
+      <Box py="115px" px={4} maxWidth={500} mx="auto">
         <Grid
           fluid
           templateColumns="repeat(4, 1fr)"

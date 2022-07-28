@@ -30,4 +30,6 @@ const generateColourPalette = (baseColor) => {
 export const colors = {
   black: generateColourPalette('#000'),
   white: generateColourPalette('#fff'),
+  purple: generateColourPalette('#9b51e0'),
+  pink: generateColourPalette('#ff86dd'),
 };
