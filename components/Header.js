@@ -20,7 +20,7 @@ export const Header = () => {
       {address ? (
         <Flex alignItems="center" height="24px">
           <ConnectButton
-            accountStatus="address"
+            accountStatus="avatar"
             chainStatus="icon"
             showBalance={false}
           />

@@ -15,7 +15,7 @@ import '../styles/globals.css';
 import { Header } from '../components/Header';
 
 const { chains, provider } = configureChains(
-  // [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+  // [chain.mainnet],
   [chain.rinkeby],
   [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
 );
