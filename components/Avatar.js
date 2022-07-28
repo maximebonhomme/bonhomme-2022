@@ -45,14 +45,28 @@ export const Avatar = () => {
       >
         <Flex alignItems="center" justifyContent="center" position="relative">
           {address && (
-            <Image
-              maxWidth="none"
+            <Flex
+              alignItems="center"
+              justifyContent="center"
               position="absolute"
-              width={{ base: 'full', md: '135%' }}
-              src="/blurs.png"
-              role="presentation"
-              animation={`${spin} infinite 5s linear`}
-            />
+              top={0}
+              left={0}
+              right={0}
+              bottom={0}
+              animation={`${spin} infinite 2.5s paused linear`}
+              _hover={{
+                animationPlayState: 'running',
+              }}
+            >
+              <Image
+                maxWidth="none"
+                position="absolute"
+                width={{ base: 'full', md: '135%' }}
+                src="/blurs.png"
+                role="presentation"
+                animation={`${spin} infinite 5s linear`}
+              />
+            </Flex>
           )}
           <Image
             borderRadius="full"
