@@ -13,7 +13,9 @@ export const Experience = ({
 }) => (
   <Grid fluid templateColumns="repeat(4, 1fr)" mb={10} {...props}>
     <GridItem colSpan={{ base: 4, sm: 1 }}>
-      <Text>{side}</Text>
+      <Text color="white" opacity={0.5}>
+        {side}
+      </Text>
     </GridItem>
     <GridItem colSpan={{ base: 4, sm: 3 }}>
       {image && <Image width="36px" mb={4} src={image} alt={title} />}
@@ -21,7 +23,11 @@ export const Experience = ({
         {title}
       </Heading>
       {desc && <Text my={2}>{desc}</Text>}
-      {stack && <Text opacity={0.5}>{stack}</Text>}
+      {stack && (
+        <Text color="white" opacity={0.5}>
+          {stack}
+        </Text>
+      )}
     </GridItem>
   </Grid>
 );

@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Cursor />
 
-      <Box py={16} px={4} maxWidth={490} mx="auto">
+      <Box py={16} px={4} maxWidth={500} mx="auto">
         <Grid
           fluid
           templateColumns="repeat(4, 1fr)"
@@ -26,6 +26,7 @@ export default function Home() {
               </Heading>
               <Text>Product-focused Fullstack Developer</Text>
               <Link
+                color="white"
                 opacity={0.5}
                 href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
               >

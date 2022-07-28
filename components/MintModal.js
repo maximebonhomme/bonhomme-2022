@@ -63,7 +63,7 @@ export const MintModal = ({ name, isOpen, onClose }) => {
           mx="auto"
           mb={6}
           width="96px"
-          src="/free3x3.svg"
+          src="/bonhomme.gif"
           alt="Free 3x3 NFT"
         />
         <Text fontWeight="semibold" mb={2}>
