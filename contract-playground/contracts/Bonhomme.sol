@@ -2,17 +2,20 @@
 pragma solidity ^0.8.14;
 
 // Name: Bonhomme 3x3
-// Description: Generative 3x3 grid free to mint
+// Description: Bonhomme is a collection of generated, on-chain, 3x3 grids that represent your wallet address.
+// Website: https://bonhomme.lol
 // Twitter: @pixel_arts
 // Build: himlate.eth
+// Design: biron.eth
 // Using to HotChainSVG: 0xa7988c8abb7706e024a8f2a1328e376227aaad18
 
 import 'erc721a/contracts/ERC721A.sol';
+import '@openzeppelin/contracts/access/Ownable.sol';
 import './Utils.sol';
 import './SVG.sol';
 import './Base64.sol';
 
-contract Bonhomme is ERC721A {
+contract Bonhomme is ERC721A, Ownable {
     string[9] public colors = [
         '#9b51e0',
         '#2f80ed',
@@ -25,6 +28,8 @@ contract Bonhomme is ERC721A {
         '#ff86dd'
     ];
     uint256 public constant PX_SIZE = 300;
+    string public description =
+        'Bonhomme is a collection of generated, on-chain, 3x3 grids that represent your wallet address. Only one per wallet. Free forever.';
 
     mapping(address => bool) public hasAddressMinted;
     mapping(uint256 => address) public seeds;
@@ -33,17 +38,29 @@ contract Bonhomme is ERC721A {
 
     error OnlyOneMintAllowed();
 
-    modifier hasNeverMinted() {
-        if (hasAddressMinted[msg.sender] == true) revert OnlyOneMintAllowed();
+    modifier hasNeverMinted(address _address) {
+        if (hasAddressMinted[_address] == true) revert OnlyOneMintAllowed();
         _;
     }
 
-    function mint() external payable hasNeverMinted {
+    function mint() external payable hasNeverMinted(msg.sender) {
         uint256 _currentTokenId = _nextTokenId();
 
         _mint(msg.sender, 1);
         hasAddressMinted[msg.sender] = true;
         seeds[_currentTokenId] = msg.sender;
+    }
+
+    function airdrop(address _address)
+        external
+        onlyOwner
+        hasNeverMinted(_address)
+    {
+        uint256 _currentTokenId = _nextTokenId();
+
+        _mint(_address, 1);
+        hasAddressMinted[_address] = true;
+        seeds[_currentTokenId] = _address;
     }
 
     function getShape(
@@ -119,6 +136,10 @@ contract Bonhomme is ERC721A {
             );
     }
 
+    function withdraw() external payable onlyOwner {
+        payable(owner()).transfer(address(this).balance);
+    }
+
     function tokenURI(uint256 _tokenId)
         public
         view
@@ -136,7 +157,9 @@ contract Bonhomme is ERC721A {
                             abi.encodePacked(
                                 '{"name":"Bonhomme #',
                                 utils.uint2str(_tokenId),
-                                '", "description":"Bonhomme is a collection of generated 3x3 grids representing your wallet address. Only one per wallet. Free forever.", ',
+                                '", "description":"',
+                                description,
+                                '", ',
                                 '"attributes": [{"trait_type": "seed", "value": "',
                                 utils.uint2str(seed),
                                 '"}]',
