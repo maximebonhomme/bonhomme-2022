@@ -16,8 +16,9 @@ import {
   usePrepareContractWrite,
 } from 'wagmi';
 import ABI from '../contract-playground/abi/bonhommeABI.json';
+import cfg from '../config';
 
-const contractAddress = '0x54d0F426943229C2D533D9634A855464faCe14ff';
+const { contractAddress } = cfg;
 
 export const MintModal = ({ name, isOpen, onClose }) => {
   const [isLoading, setLoading] = useState(false);
