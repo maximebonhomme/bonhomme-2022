@@ -23,7 +23,7 @@ export default function Document() {
           content="Maxime Bonhomme - Product-focused FullStack Developer"
         />
         <meta name="twitter:site" content="@pixel_arts" />
-        <meta name="twitter:creator" content="@biron_io" />
+        <meta name="twitter:creator" content="@pixel_arts" />
         <meta
           name="twitter:image:src"
           content="https://bonhomme.lol/meta-og.png"
