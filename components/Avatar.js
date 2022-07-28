@@ -38,12 +38,17 @@ export const Avatar = () => {
         onClick={onOpen}
         type="button"
         cursor={address ? 'pointer' : 'default'}
+        transition="0.25s cubic-bezier(0.68, -0.6, 0.32, 1.6)"
+        _hover={{
+          transform: 'scale(1.03)',
+        }}
       >
         <Flex alignItems="center" justifyContent="center" position="relative">
           {address && (
             <Image
+              maxWidth="none"
               position="absolute"
-              width="125%"
+              width="135%"
               src="/blurs.png"
               role="presentation"
               animation={`${spin} infinite 5s linear`}
@@ -51,7 +56,7 @@ export const Avatar = () => {
           )}
           <Image
             borderRadius="full"
-            width="80%"
+            width="full"
             src="/profile.png"
             alt="Bonhomme"
           />
