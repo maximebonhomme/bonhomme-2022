@@ -112,7 +112,7 @@ export const MintModal = ({ name, isOpen, onClose }) => {
             ) : (
               <Link
                 opacity={0.7}
-                href={`https://rinkeby.etherscan.io/address/${contractAddress}`}
+                href={`https://etherscan.io/address/${contractAddress}`}
                 fontSize="12px"
               >
                 view contract
