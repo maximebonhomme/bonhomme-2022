@@ -91,7 +91,7 @@ export default function Home() {
           <Experience
             href="https://kineticspectru.ms/"
             image="/kineticspectrum.png"
-            side="Ongoing"
+            side="2022"
             title="Kinetic Spectrums"
             desc="Generative on-chain NFTs. A collection of dynamic, ever changing artworks."
             stack="Solidity • ERC721 • Next.js"
