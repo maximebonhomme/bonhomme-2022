@@ -61,7 +61,7 @@ export const Avatar = () => {
               <Image
                 maxWidth="none"
                 position="absolute"
-                width={{ base: 'full', md: '135%' }}
+                width={{ base: 'full', lg: '135%' }}
                 src="/blurs.png"
                 role="presentation"
                 animation={`${spin} infinite 5s linear`}
@@ -70,7 +70,7 @@ export const Avatar = () => {
           )}
           <Image
             borderRadius="full"
-            width={{ base: '80%', md: 'full' }}
+            width={{ base: '80%', lg: 'full' }}
             src="/profile.png"
             alt="Bonhomme"
           />
