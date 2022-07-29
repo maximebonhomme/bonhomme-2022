@@ -1551,6 +1551,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@openzeppelin/contracts@^4.7.2":
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.7.2.tgz#7587416fe2d35abf574193515b8971bfe9f64bc7"
+  integrity sha512-4n/JL9izql8303mPqPdubuna/DWEMbmOzWYUWyCPhjhiEr2w3nQrjE7vZz1fBF+wzzP6dZbIcsgqACk53c9FGA==
+
 "@pedrouid/environment@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@pedrouid/environment/-/environment-1.0.1.tgz#858f0f8a057340e0b250398b75ead77d6f4342ec"
@@ -2866,6 +2871,11 @@ entities@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/entities/-/entities-3.0.1.tgz#2b887ca62585e96db3903482d336c1006c3001d4"
   integrity sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==
+
+erc721a@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/erc721a/-/erc721a-4.2.0.tgz#852340aa6802a3799c20ec8631935a3e03554185"
+  integrity sha512-b3MCLFMKQ+gVlRr7BUP6p4li5+ujbVZR6bSdOPtwZ6+9gAgYxXxHp0yaUPPvFpVQQVdlU8/LKQmGrrPhESGwWg==
 
 error-ex@^1.3.1:
   version "1.3.2"
