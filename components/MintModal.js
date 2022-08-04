@@ -15,7 +15,7 @@ import {
   useContractWrite,
   usePrepareContractWrite,
 } from 'wagmi';
-import ABI from '../contract-playground/abi/bonhommeABI.json';
+import ABI from '../nft-collection-3x3/abi/bonhommeABI.json';
 import cfg from '../config';
 
 const { contractAddress } = cfg;
