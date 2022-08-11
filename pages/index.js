@@ -34,7 +34,7 @@ export default function Home() {
                 opacity={0.5}
                 href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
               >
-                himlate.eth
+                bonhomme.eth
               </Link>
             </Box>
           </GridItem>
@@ -109,7 +109,7 @@ export default function Home() {
           />
           <Experience
             side="Etherscan"
-            title="himlate.eth"
+            title="bonhomme.eth"
             href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
             mb={4}
           />
