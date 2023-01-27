@@ -55,6 +55,13 @@ export default function Home() {
           </Heading>
 
           <Experience
+            href="https://iyk.app"
+            side="2022 - present"
+            title="Senior Frontend Engineer – IYK"
+            desc="Building the Whole Wide World﹡"
+            stack="TS • Next • Nest • Stitches • Mobx • Turbo"
+          />
+          <Experience
             href="https://everpress.com/"
             side="2020 - 2022"
             title="Full Stack & Technical Lead – Everpress"
