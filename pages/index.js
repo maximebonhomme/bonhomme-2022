@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bonhomme - FullStack Developer</title>
+        <title>Noble Varghese - Backend Developer</title>
       </Head>
       <Cursor />
 
@@ -26,15 +26,15 @@ export default function Home() {
           <GridItem colSpan={3}>
             <Box>
               <Heading as="h1" size="lg">
-                Maxime Bonhomme
+                Noble Varghese
               </Heading>
-              <Text>Product-focused Fullstack Developer</Text>
+              <Text>Backend Developer</Text>
               <Link
                 color="white"
                 opacity={0.5}
-                href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
+                href="https://www.linkedin.com/in/noble-k-varghese-749bb448/"
               >
-                bonhomme.eth
+                noble-varghese
               </Link>
             </Box>
           </GridItem>
@@ -44,9 +44,7 @@ export default function Home() {
             About
           </Heading>
           <Text>
-            GM, I'm Max. I enjoy building dynamic, creative products from start
-            to finish. Focused on developing intuitive experiences that
-            constantly grow and improve based on user metrics. Always shipping.
+            GM, I'm Noble. I'm an experienced software developer with 4 years of experience, proficient in Typescript, Python and Django framework, has hands on experience at AWS and Kafka, with strong skills in application development, debugging and project management.
           </Text>
         </Box>
         <Box mb={14}>
@@ -55,53 +53,50 @@ export default function Home() {
           </Heading>
 
           <Experience
-            href="https://iyk.app"
-            side="2022 - present"
-            title="Senior Frontend Engineer – IYK"
-            desc="Building the Whole Wide World﹡"
+            href="https://oslash.com/"
+            side="2022 - 2023"
+            title="Product Engineer I - Oslash"
+            desc="Implemented GraphQL APIs on serverless stack using Typescript capable of returning results in less than 500ms.
+            • Designed APIs on Cloudflare workers in Typescript and introduced Caching on Cloudflare returning results in 120ms.
+            • Contributed to the setup of Infra As Code (IaC) using terraform and typescript using CDK for Terraform.
+            • Optimized the Cloudflare API to reduce the CPU time by more than 50%."
             stack="TS • Next • Nest • Stitches • Mobx • Turbo"
           />
           <Experience
-            href="https://everpress.com/"
-            side="2020 - 2022"
-            title="Full Stack & Technical Lead – Everpress"
-            desc="Led a team of 5 engineers to develop our creator tools and e-commerce
-        app. Collaborated closely with the Head of Product to track our tactical
-        objectives, improve technical directions and shipping frequency."
+            href="https://madstreetden.com/"
+            side="2021 - 2022"
+            title="Junior Software Engineer - Mad Street Den"
+            desc="Ensured seamless flow of data between three microservices, including disaster recovery plans to prevent data loss, maintaining 99.997% uptime, data partitioning, and eventual consistency.
+            • Created custom integration and plugins based on clients requirements thereby enabling easy integration and on-boarding.
+            • Troubleshooted scaling issues in Kafka pipeline of a micro-service thereby ensuring high throughput and faster processing capable of processing up to 15Mil documents with concurrency.
+            • Developed scripts for DynamoDB, RDS (PostgreSQL), and Elastic Search to generate reports and integrated them with cron jobs to Slack, enabling non-technical teams to access them daily.
+            • Maintained the AWS service cost in control by implementing better scaling policies and removal of unused services using scripts on AWS saving more than 3000$ per month.
+            • Automated the forecast of monthly cost of cloud services based on usage with a slack integration.
+            • Devised Migrated data from an existing system to a new system keeping data integrity."
             stack="React • Redux • Symfony • AWS"
           />
           <Experience
-            side="2016 – 2020"
-            title="Front End Engineer – Freelance"
-            desc="Worked with a range of large and small agencies, start-ups and individuals to build products. Clients included Marvel App, United Nations, Netflix, Dropbox Design."
+            href="https://madstreetden.com/"
+            side="2020 – 2021"
+            title="Engineering Trainee - Mad Street Den"
+            desc="Restructured and re-architected an application from Node js to Python.
+          • Developed custom integration and plugins based on clients requirements thereby enabling easy integration, client delight
+          and retention.
+          • Enhanced coding quality through standard practices and design patterns, reducing redundancy and elevating code to
+          production standards. Added automated quality checks and alerts for non-compliant code.
+          • Deployed AWS applications with Opsgenie alerts and centralized logging for universal access to logs.
+          • Managed EC2 servers with auto scaling and high availability to maintain 99% uptime, utilizing Spotinst for pod
+          management."
             stack="React • Redux • Styled Components • Framer Motion"
           />
           <Experience
-            href="https://neverbland.com/"
-            side="2014 – 2016"
-            title="Front End Engineer – Neverbland"
-            desc="Part of a tight-knit team of designers, developers and critical thinkers, I built MVP products and marketing experiences for start-ups."
+            href="https://madstreetden.com/"
+            side="2019 – 2020"
+            title="Intern - Mad Street Den"
+            desc="Designed client requirements as RESTful API over the course of the internship.
+            • Handled the upkeep of a microservice which included bug fixes, creation of design documents and enhancements on a
+            daily basis."
             stack="React • Redux • CSSModules • Three.js"
-          />
-
-          <Heading as="h2" size="md" mt={14} mb={10}>
-            Side Projects
-          </Heading>
-
-          <Experience
-            image="/tamiko.svg"
-            side="Ongoing"
-            title="Tamiko"
-            desc="Tamiko are non-fungible friends that live completely on-chain. You can hatch, feed, breed and evolve them."
-            stack="Solidity • ERC721 • ERC1155 • Next.js"
-          />
-          <Experience
-            href="https://kineticspectru.ms/"
-            image="/kineticspectrum.png"
-            side="2022"
-            title="Kinetic Spectrums"
-            desc="Generative on-chain NFTs. A collection of dynamic, ever changing artworks."
-            stack="Solidity • ERC721 • Next.js"
           />
 
           <Heading as="h2" size="md" mt={14} mb={10}>
@@ -110,26 +105,14 @@ export default function Home() {
 
           <Experience
             side="Github"
-            title="@maximebonhomme"
-            href="https://github.com/maximebonhomme"
+            title="@freebird96"
+            href="https://github.com/freebird96"
             mb={4}
           />
           <Experience
-            side="Etherscan"
-            title="bonhomme.eth"
-            href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
-            mb={4}
-          />
-          <Experience
-            side="Foundation"
-            title="@bonhomme"
-            href="https://foundation.app/@bonhomme?tab=owned"
-            mb={4}
-          />
-          <Experience
-            side="Twitter"
-            title="@pixel_arts"
-            href="https://twitter.com/pixel_arts"
+            side="Instagram"
+            title="@noble_varghese_"
+            href="https://instagram.com/noble_varghese_?igshid=YmMyMTA2M2Y="
             mb={4}
           />
         </Box>

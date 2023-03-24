@@ -24,37 +24,6 @@ export const Header = () => {
       alignItems="center"
       justifyContent="space-between"
     >
-      <Image src="/logo.svg" alt="Bonhomme" />
-      {address ? (
-        <Flex alignItems="center" height="24px">
-          <ConnectButton
-            accountStatus="avatar"
-            chainStatus="icon"
-            showBalance={false}
-          />
-        </Flex>
-      ) : (
-        <Box
-          onClick={openConnectModal}
-          height="24px"
-          position="relative"
-          as="button"
-          role="button"
-          textTransform="uppercase"
-          px={3}
-          color="white"
-          borderRadius="lg"
-          bg="blue.500"
-          fontSize="sm"
-          fontWeight="semibold"
-          transition="0.1s"
-          _hover={{ bg: 'blue.700' }}
-        >
-          <Box as="span" position="relative" zIndex={10}>
-            Connect Wallet
-          </Box>
-        </Box>
-      )}
     </Flex>
   );
 };
