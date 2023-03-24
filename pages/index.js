@@ -60,7 +60,7 @@ export default function Home() {
             • Designed APIs on Cloudflare workers in Typescript and introduced Caching on Cloudflare returning results in 120ms.
             • Contributed to the setup of Infra As Code (IaC) using terraform and typescript using CDK for Terraform.
             • Optimized the Cloudflare API to reduce the CPU time by more than 50%."
-            stack="TS • Next • Nest • Stitches • Mobx • Turbo"
+            stack="TS • GraphQL • Serverless Stack • AWS • CloudFlare • Terraform"
           />
           <Experience
             href="https://madstreetden.com/"
@@ -73,7 +73,7 @@ export default function Home() {
             • Maintained the AWS service cost in control by implementing better scaling policies and removal of unused services using scripts on AWS saving more than 3000$ per month.
             • Automated the forecast of monthly cost of cloud services based on usage with a slack integration.
             • Devised Migrated data from an existing system to a new system keeping data integrity."
-            stack="React • Redux • Symfony • AWS"
+            stack="AWS • Python • Kafka"
           />
           <Experience
             href="https://madstreetden.com/"
@@ -87,7 +87,7 @@ export default function Home() {
           • Deployed AWS applications with Opsgenie alerts and centralized logging for universal access to logs.
           • Managed EC2 servers with auto scaling and high availability to maintain 99% uptime, utilizing Spotinst for pod
           management."
-            stack="React • Redux • Styled Components • Framer Motion"
+            stack="AWS • Python • Node js"
           />
           <Experience
             href="https://madstreetden.com/"
@@ -96,7 +96,7 @@ export default function Home() {
             desc="Designed client requirements as RESTful API over the course of the internship.
             • Handled the upkeep of a microservice which included bug fixes, creation of design documents and enhancements on a
             daily basis."
-            stack="React • Redux • CSSModules • Three.js"
+            stack="AWS • Node js"
           />
 
           <Heading as="h2" size="md" mt={14} mb={10}>
