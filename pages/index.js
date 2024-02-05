@@ -59,7 +59,7 @@ export default function Home() {
             side="2022 - present"
             title="Senior Frontend Engineer – IYK"
             desc="Building the Whole Wide World﹡"
-            stack="TS • Next • Nest • Stitches • Mobx • Turbo"
+            stack="Remix • Prisma • Tailwind • Shadcn"
           />
           <Experience
             href="https://everpress.com/"
@@ -89,8 +89,15 @@ export default function Home() {
           </Heading>
 
           <Experience
-            image="/tamiko.svg"
+            image="/offline.gif"
             side="Ongoing"
+            title="Offline Nostalgia"
+            desc="Generative art project around the offline era. Only collectible in person."
+            stack="Solidity • P5.js • fully onchain"
+          />
+          <Experience
+            image="/tamiko.svg"
+            side="Paused"
             title="Tamiko"
             desc="Tamiko are non-fungible friends that live completely on-chain. You can hatch, feed, breed and evolve them."
             stack="Solidity • ERC721 • ERC1155 • Next.js"
