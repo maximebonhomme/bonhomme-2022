@@ -84,11 +84,12 @@ export default function Home() {
           </Heading>
 
           <Experience
-            image="/offline.gif"
-            side="Ongoing"
+            href="https://offline.london"
+            image="/offline-favicon.png"
+            side="2024"
             title="Offline Nostalgia"
-            desc="Generative art project around the offline era. Only collectible in person."
-            stack="Solidity • P5.js • fully onchain"
+            desc="Generative art project around the offline era. Physical mint."
+            stack="Solidity • IYK Chips • fully onchain"
           />
           <Experience
             image="/tamiko.svg"
