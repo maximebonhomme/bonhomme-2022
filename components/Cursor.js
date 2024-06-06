@@ -1,39 +1,39 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Box, Flex, Image } from '@chakra-ui/react';
-import { useEnsName, useEnsAvatar, useAccount } from 'wagmi';
-import { useMouse, useWindowSize } from 'react-use';
-import { trimAddress } from '../utils/address';
+import React, { useRef, useState, useEffect } from "react"
+import { Box, Flex, Image } from "@chakra-ui/react"
+import { useEnsName, useEnsAvatar, useAccount } from "wagmi"
+import { useMouse, useWindowSize } from "react-use"
+import { trimAddress } from "../utils/address"
 
 const Cursor = () => {
-  const [hasMounted, setMounted] = useState(false);
-  const { width } = useWindowSize();
-  const { address } = useAccount();
+  const [hasMounted, setMounted] = useState(false)
+  const { width } = useWindowSize()
+  const { address } = useAccount()
   const { data: ensName } = useEnsName({
     address,
-  });
+  })
   const { data: ensAvatar } = useEnsAvatar({
     addressOrName: address,
-  });
-  const [isVisible, setVisibility] = useState(false);
-  const boxRef = useRef();
-  const { elX, elY } = useMouse(boxRef);
-  const isMobile = width <= 768;
+  })
+  const [isVisible, setVisibility] = useState(false)
+  const boxRef = useRef()
+  const { elX, elY } = useMouse(boxRef)
+  const isMobile = width <= 768
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (boxRef.current) {
       if (elX || elY) {
-        setVisibility(true);
+        setVisibility(true)
       } else {
-        setVisibility(false);
+        setVisibility(false)
       }
     }
-  }, [elX, elY, boxRef]);
+  }, [elX, elY, boxRef])
 
-  if (isMobile || !address || !hasMounted) return false;
+  if (isMobile || !address || !hasMounted) return false
 
   return (
     <Box
@@ -79,7 +79,7 @@ const Cursor = () => {
         {ensName || trimAddress(address)}
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
-export default Cursor;
+export default Cursor

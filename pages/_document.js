@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from "next/document"
 
 export default function Document() {
   return (
@@ -24,10 +24,7 @@ export default function Document() {
         />
         <meta name="twitter:site" content="@pixel_arts" />
         <meta name="twitter:creator" content="@pixel_arts" />
-        <meta
-          name="twitter:image:src"
-          content="https://bonhomme.lol/meta-og.png"
-        />
+        <meta name="twitter:image:src" content="https://bonhomme.lol/meta-og.png" />
         <meta name="og:title" content="Bonhomme - Developer" />
         <meta
           name="og:description"
@@ -44,5 +41,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import { Link, Box, Text, Heading, GridItem } from '@chakra-ui/react';
-import Head from 'next/head';
-import { Grid } from '../components/Grid';
-import { Experience } from '../components/Experience';
-import Cursor from '../components/Cursor';
-import { Avatar } from '../components/Avatar';
+import { Link, Box, Text, Heading, GridItem } from "@chakra-ui/react"
+import Head from "next/head"
+import { Grid } from "../components/Grid"
+import { Experience } from "../components/Experience"
+import Cursor from "../components/Cursor"
+import { Avatar } from "../components/Avatar"
 
 export default function Home() {
   return (
@@ -14,12 +14,7 @@ export default function Home() {
       <Cursor />
 
       <Box py="115px" px={4} maxWidth={500} mx="auto">
-        <Grid
-          fluid
-          templateColumns="repeat(4, 1fr)"
-          mb={10}
-          alignItems="center"
-        >
+        <Grid fluid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
           <GridItem colSpan={1}>
             <Avatar />
           </GridItem>
@@ -44,9 +39,9 @@ export default function Home() {
             About
           </Heading>
           <Text>
-            GM, I'm Max. I enjoy building dynamic, creative products from start
-            to finish. Focused on developing intuitive experiences that
-            constantly grow and improve based on user metrics. Always shipping.
+            GM, I'm Max. I enjoy building dynamic, creative products from start to
+            finish. Focused on developing intuitive experiences that constantly grow and
+            improve based on user metrics. Always shipping.
           </Text>
         </Box>
         <Box mb={14}>
@@ -142,5 +137,5 @@ export default function Home() {
         </Box>
       </Box>
     </>
-  );
+  )
 }

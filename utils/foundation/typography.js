@@ -1,10 +1,10 @@
-import { clamp } from './clamp';
+import { clamp } from "./clamp"
 
 export const typography = {
   letterSpacings: {
-    tight: '-0.005em',
-    normal: '0',
-    wide: '0.005em',
+    tight: "-0.005em",
+    normal: "0",
+    wide: "0.005em",
   },
 
   lineHeights: {
@@ -28,6 +28,6 @@ export const typography = {
   fontSizes: {
     sm: clamp(10, 10),
     md: clamp(14, 14),
-    lg: clamp(18, 22, 'xs', 'sm'),
+    lg: clamp(18, 22, "xs", "sm"),
   },
-};
+}
