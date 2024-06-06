@@ -1,43 +1,34 @@
-import PropTypes from 'prop-types';
 import { ChakraProvider } from '@chakra-ui/react';
-import {
-  getDefaultWallets,
-  RainbowKitProvider,
-  darkTheme,
-} from '@rainbow-me/rainbowkit';
-import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { publicProvider } from 'wagmi/providers/public';
+import PropTypes from 'prop-types';
+import { WagmiConfig, createConfig, mainnet } from 'wagmi';
 import { theme } from '../utils/theme';
-// eslint-disable-next-line import/no-unresolved
-import '@rainbow-me/rainbowkit/styles.css';
-import '../styles/globals.css';
 import { Header } from '../components/Header';
+import '../styles/globals.css';
+import { ConnectKitProvider, getDefaultConfig } from 'connectkit';
 
-const { chains, provider } = configureChains(
-  [chain.mainnet],
-  // [chain.rinkeby],
-  [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
-);
-const { connectors } = getDefaultWallets({
-  appName: 'Bonhomme',
-  chains,
-});
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-});
+const wagmiConfig = createConfig(
+  getDefaultConfig({
+    // Required API Keys
+    chains: [mainnet],
+    infuraId: "ca44ce9a485946dc9625c88bd5431eed",
+    walletConnectProjectId: "725416c0a4e3389225cf458a96ea7cca",
+    appName: "Bonhomme",
+    appDescription:
+      "Maxime Bonhomme - Product-focused Developer",
+    appUrl: "https://bonhomme.lol", 
+    appIcon: "https://bonhomme.lol/favicon.png", 
+  })
+)
 
 export default function App({ Component, pageProps }) {
   return (
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} theme={darkTheme()}>
+    <WagmiConfig config={wagmiConfig}>
+      <ConnectKitProvider>
         <ChakraProvider theme={theme}>
           <Header />
           <Component {...pageProps} />
         </ChakraProvider>
-      </RainbowKitProvider>
+      </ConnectKitProvider>
     </WagmiConfig>
   );
 }

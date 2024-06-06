@@ -25,16 +25,16 @@ export const MintModal = ({ name, isOpen, onClose }) => {
   const [isSuccess, setSuccess] = useState(false);
   const { address } = useAccount();
   const { config } = usePrepareContractWrite({
-    addressOrName: contractAddress,
-    contractInterface: ABI,
+    address: contractAddress,
+    abi: ABI,
     functionName: 'mint',
   });
   const { data, write: mint } = useContractWrite(config);
   const { data: hasMinted, isLoading: readMintedLoading } = useContractRead({
-    addressOrName: contractAddress,
-    contractInterface: ABI,
+    address: contractAddress,
+    abi: ABI,
     functionName: 'hasAddressMinted',
-    args: address,
+    args: [address],
   });
 
   const waitForTx = useCallback(async () => {
