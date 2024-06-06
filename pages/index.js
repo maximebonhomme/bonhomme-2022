@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bonhomme - FullStack Developer</title>
+        <title>Bonhomme - Developer</title>
       </Head>
       <Cursor />
 
@@ -28,7 +28,7 @@ export default function Home() {
               <Heading as="h1" size="lg">
                 Maxime Bonhomme
               </Heading>
-              <Text>Product-focused Fullstack Developer</Text>
+              <Text>Product-focused Developer</Text>
               <Link
                 color="white"
                 opacity={0.5}
