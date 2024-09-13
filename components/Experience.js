@@ -14,6 +14,8 @@ export const Experience = ({ side, title, desc, stack, image, href, ...props }) 
       <Heading
         as={href ? "a" : "h3"}
         href={href}
+        target="_blank"
+        rel="noreferrer"
         size="md"
         display="flex"
         alignItems="center"

@@ -84,6 +84,14 @@ export default function Home() {
           </Heading>
 
           <Experience
+            href="https://www.instagram.com/dolenn.bzh"
+            image="/dolenn-single.png"
+            side="ongoing"
+            title="Dolenn - Hot Sauce"
+            desc="Making hot sauces with a friend, made in Brittany with local ingredients."
+            stack="Design • Illustration • Packaging • Cooking"
+          />
+          <Experience
             href="https://offline.london"
             image="/offline-favicon.png"
             side="2024"
