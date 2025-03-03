@@ -39,9 +39,9 @@ export default function Home() {
             About
           </Heading>
           <Text>
-            GM, I'm Max. I enjoy building dynamic, creative products from start to
-            finish. Focused on developing intuitive experiences that constantly grow and
-            improve based on user metrics. Always shipping.
+            I'm Max. I enjoy building dynamic, creative products from start to finish.
+            Focused on developing intuitive experiences that constantly grow and improve
+            based on user metrics. Always shipping.
           </Text>
         </Box>
         <Box mb={14}>
@@ -54,7 +54,7 @@ export default function Home() {
             side="2022 - present"
             title="Senior Frontend Engineer – IYK"
             desc="Building the Whole Wide World﹡"
-            stack="Remix • Prisma • Tailwind • Shadcn"
+            stack="Remix • Prisma • Effect • Tailwind"
           />
           <Experience
             href="https://everpress.com/"
