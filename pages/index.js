@@ -84,9 +84,17 @@ export default function Home() {
           </Heading>
 
           <Experience
+            href="https://podpod.me"
+            image="/podpod.svg"
+            side="Ongoing"
+            title="Podpod"
+            desc="Generage podcasts from things you don't have time to read: articles, newsletters, and more."
+            stack="RR7 • Mistral • Redis • Tailwind • Effect"
+          />
+          <Experience
             href="https://www.instagram.com/dolenn.bzh"
             image="/dolenn-single.png"
-            side="Ongoing"
+            side="2024"
             title="Dolenn - Hot Sauce"
             desc="Making hot sauces with a friend, made in Brittany with local ingredients."
             stack="Design • Illustration • Packaging • Cooking"
