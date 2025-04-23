@@ -88,7 +88,7 @@ export default function Home() {
             image="/podpod.svg"
             side="Ongoing"
             title="Podpod"
-            desc="Generage podcasts from things you don't have time to read: articles, newsletters, and more."
+            desc="Generate podcasts from things you don't have time to read: articles, newsletters, and more."
             stack="RR7 • Mistral • Redis • Tailwind • Effect"
           />
           <Experience
@@ -100,11 +100,11 @@ export default function Home() {
             stack="Design • Illustration • Packaging • Cooking"
           />
           <Experience
-            href="https://offline.london"
+            // href="https://offline.london"
             image="/offline-favicon.png"
             side="2024"
             title="Offline Nostalgia"
-            desc="Generative art project around the offline era. Physical mint."
+            desc="Generative art project around the offline era. Physical mint across London and Paris."
             stack="Solidity • IYK Chips • fully onchain"
           />
           <Experience
