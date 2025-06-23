@@ -100,7 +100,7 @@ export default function Home() {
             stack="Design • Illustration • Packaging • Cooking"
           />
           <Experience
-            // href="https://offline.london"
+            href="https://offline-nostalgia.bonhomme.lol"
             image="/offline-favicon.png"
             side="2024"
             title="Offline Nostalgia"
