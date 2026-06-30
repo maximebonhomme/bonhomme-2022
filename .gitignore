@@ -37,3 +37,8 @@ public/sitemap.xml
 
 # Sentry
 .sentryclirc
+
+# local tooling
+.claude/
+.npmrc
+docs/
