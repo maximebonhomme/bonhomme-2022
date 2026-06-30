@@ -1,4 +1,5 @@
-import { Link, Box, Text, Heading, GridItem } from "@chakra-ui/react"
+import { Link, Box, Text, Heading, GridItem, Flex } from "@chakra-ui/react"
+import { useQuery } from "@tanstack/react-query"
 import Head from "next/head"
 import { Grid } from "../components/Grid"
 import { Experience } from "../components/Experience"
@@ -6,6 +7,18 @@ import Cursor from "../components/Cursor"
 import { Avatar } from "../components/Avatar"
 
 export default function Home() {
+  const { data: reads = [] } = useQuery({
+    queryKey: ["arena-reads"],
+    queryFn: async () => {
+      const res = await fetch(
+        "https://api.are.na/v3/channels/reads-nz-i4lkqt9a/contents?per=5&sort=position_desc"
+      )
+      const data = await res.json()
+      console.log(data.data)
+      return (data.data || []).filter((block) => block.type === "Link")
+    },
+  })
+
   return (
     <>
       <Head>
@@ -24,13 +37,6 @@ export default function Home() {
                 Maxime Bonhomme
               </Heading>
               <Text>Product-focused Developer</Text>
-              <Link
-                color="white"
-                opacity={0.5}
-                href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
-              >
-                bonhomme.eth
-              </Link>
             </Box>
           </GridItem>
         </Grid>
@@ -134,23 +140,41 @@ export default function Home() {
             mb={4}
           />
           <Experience
-            side="Etherscan"
-            title="bonhomme.eth"
-            href="https://etherscan.io/address/0xff5fe6e0d3d48c90a66217dd4a7560a3ed8dacd2"
-            mb={4}
-          />
-          <Experience
-            side="Foundation"
-            title="@bonhomme"
-            href="https://foundation.app/@bonhomme?tab=owned"
-            mb={4}
-          />
-          <Experience
             side="Twitter"
             title="@pixel_arts"
             href="https://twitter.com/pixel_arts"
             mb={4}
           />
+
+          {reads.length > 0 && (
+            <>
+              <Heading as="h2" size="md" mt={14} mb={10}>
+                Latest reads
+              </Heading>
+
+              <Flex flexDirection="column" gap={4}>
+                {reads.map((block) => (
+                  <Link key={block.id} href={block.source?.url} isExternal _hover={{ textDecoration: "none" }} textDecoration="none" role="group">
+                    <Text as="span" color="white" _groupHover={{ textDecoration: "underline" }}>
+                      {block.title}
+                    </Text>
+                    {block.source?.url && (
+                      <Text as="span" color="gray.400">
+                        {" — "}
+                        {new URL(block.source.url).hostname.replace("www.", "")}
+                      </Text>
+                    )}
+                  </Link>
+                ))}
+              </Flex>
+              {/* <Experience
+                side=""
+                title="View all"
+                href="https://www.are.na/max-bonhomme/reads-nz-i4lkqt9a"
+                mb={4}
+              /> */}
+            </>
+          )}
         </Box>
       </Box>
     </>

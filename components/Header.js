@@ -1,5 +1,4 @@
 import { Flex, Image } from "@chakra-ui/react"
-import { ConnectKitButton } from "connectkit"
 import { useEffect, useState } from "react"
 
 export const Header = () => {
@@ -22,8 +21,6 @@ export const Header = () => {
       justifyContent="space-between"
     >
       <Image src="/logo.svg" alt="Bonhomme" />
-
-      <ConnectKitButton accountStatus="avatar" chainStatus="icon" showBalance={false} />
     </Flex>
   )
 }
