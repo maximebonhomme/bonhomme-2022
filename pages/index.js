@@ -159,7 +159,7 @@ export default function Home() {
                       {block.title}
                     </Text>
                     {block.source?.url && (
-                      <Text as="span" color="gray.400">
+                      <Text as="span" color="white" opacity={0.5}>
                         {" — "}
                         {new URL(block.source.url).hostname.replace("www.", "")}
                       </Text>
