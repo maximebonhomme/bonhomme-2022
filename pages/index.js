@@ -90,9 +90,17 @@ export default function Home() {
           </Heading>
 
           <Experience
+            href="https://observerkit.com/"
+            image="/observerkit.png"
+            side="Ongoing"
+            title="ObserverKit"
+            desc="EU-hosted error tracking for JavaScript and React Native apps, for humans and agents."
+            stack="RR7 • Hono • Effect • BullMQ • Postgres • MCP"
+          />
+          <Experience
             href="https://podpod.me"
             image="/podpod.svg"
-            side="Ongoing"
+            side="2025"
             title="Podpod"
             desc="Generate podcasts from things you don't have time to read: articles, newsletters, and more."
             stack="RR7 • Mistral • Redis • Tailwind • Effect"
