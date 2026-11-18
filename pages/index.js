@@ -2,7 +2,6 @@ import { Link, Box, Text, Heading, GridItem, Flex } from "@chakra-ui/react"
 import Head from "next/head"
 import { Grid } from "../components/Grid"
 import { Experience } from "../components/Experience"
-import Cursor from "../components/Cursor"
 import { Avatar } from "../components/Avatar"
 
 const ARENA_CHANNEL = "https://www.are.na/max-bonhomme/reads-nz-i4lkqt9a"
@@ -30,7 +29,6 @@ export default function Home({ reads }) {
         <title>Bonhomme - Developer</title>
         <link rel="canonical" href="https://bonhomme.lol/" />
       </Head>
-      <Cursor />
 
       <Box py="115px" px={4} maxWidth={500} mx="auto">
         <Grid fluid templateColumns="repeat(4, 1fr)" mb={10} alignItems="center">
