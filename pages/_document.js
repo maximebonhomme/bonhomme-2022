@@ -7,20 +7,20 @@ export default function Document() {
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="Maxime Bonhomme - Product-focused Developer"
+          content="Maxime Bonhomme - Senior Software Engineer"
         />
         <meta name="image" content="https://bonhomme.lol/meta-og.png" />
         <meta itemProp="name" content="Bonhomme" />
         <meta
           itemProp="description"
-          content="Maxime Bonhomme - Product-focused Developer"
+          content="Maxime Bonhomme - Senior Software Engineer"
         />
         <meta itemProp="image" content="https://bonhomme.lol/meta-og.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Bonhomme - Developer" />
         <meta
           name="twitter:description"
-          content="Maxime Bonhomme - Product-focused Developer"
+          content="Maxime Bonhomme - Senior Software Engineer"
         />
         <meta name="twitter:site" content="@pixel_arts" />
         <meta name="twitter:creator" content="@pixel_arts" />
@@ -28,7 +28,7 @@ export default function Document() {
         <meta property="og:title" content="Bonhomme - Developer" />
         <meta
           property="og:description"
-          content="Maxime Bonhomme - Product-focused Developer"
+          content="Maxime Bonhomme - Senior Software Engineer"
         />
         <meta property="og:image" content="https://bonhomme.lol/meta-og.png" />
         <meta property="og:url" content="https://bonhomme.lol/" />
