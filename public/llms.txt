@@ -1,0 +1,22 @@
+# Maxime Bonhomme
+
+> Product-focused developer. Senior Frontend Engineer at IYK (2022 – present). Builds dynamic, creative products end to end.
+
+## Experience
+- IYK (2022 – present): Senior Frontend Engineer. Remix, Prisma, Effect, Tailwind.
+- Everpress (2020 – 2022): Full Stack & Technical Lead, led a team of 5 engineers.
+- Freelance (2016 – 2020): Front End Engineer for Marvel App, United Nations, Netflix, Dropbox Design.
+- Neverbland (2014 – 2016): Front End Engineer.
+
+## Side projects
+- [ObserverKit](https://observerkit.com/): EU-hosted error tracking for JavaScript and React Native apps.
+- [Podpod](https://podpod.me): generate podcasts from articles and newsletters.
+- [Dolenn](https://www.instagram.com/dolenn.bzh): hot sauces made in Brittany.
+- [Offline Nostalgia](https://offline-nostalgia.bonhomme.lol): generative art around the offline era.
+- [Kinetic Spectrums](https://kineticspectru.ms/): generative on-chain NFTs.
+
+## Links
+- [Website](https://bonhomme.lol/)
+- [GitHub](https://github.com/maximebonhomme)
+- [Twitter](https://twitter.com/pixel_arts)
+- [Reading list (Are.na)](https://www.are.na/max-bonhomme/reads-nz-i4lkqt9a)
