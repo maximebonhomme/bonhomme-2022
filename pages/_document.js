@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document"
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
         <meta
@@ -25,16 +25,34 @@ export default function Document() {
         <meta name="twitter:site" content="@pixel_arts" />
         <meta name="twitter:creator" content="@pixel_arts" />
         <meta name="twitter:image:src" content="https://bonhomme.lol/meta-og.png" />
-        <meta name="og:title" content="Bonhomme - Developer" />
+        <meta property="og:title" content="Bonhomme - Developer" />
         <meta
-          name="og:description"
+          property="og:description"
           content="Maxime Bonhomme - Product-focused Developer"
         />
-        <meta name="og:image" content="https://bonhomme.lol/meta-og.png" />
-        <meta name="og:url" content="https://bonhomme.lol/" />
-        <meta name="og:site_name" content="Bonhomme" />
-        <meta name="og:type" content="website" />
+        <meta property="og:image" content="https://bonhomme.lol/meta-og.png" />
+        <meta property="og:url" content="https://bonhomme.lol/" />
+        <meta property="og:site_name" content="Bonhomme" />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Maxime Bonhomme",
+              jobTitle: "Product-focused Developer",
+              url: "https://bonhomme.lol/",
+              image: "https://bonhomme.lol/meta-og.png",
+              sameAs: [
+                "https://github.com/maximebonhomme",
+                "https://twitter.com/pixel_arts",
+                "https://www.are.na/max-bonhomme",
+              ],
+            }),
+          }}
+        />
       </Head>
       <body>
         <Main />

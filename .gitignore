@@ -31,10 +31,6 @@ npm-debug.log*
 # vercel
 .vercel
 
-# next-sitemap
-public/robots.txt
-public/sitemap.xml
-
 # Sentry
 .sentryclirc
 

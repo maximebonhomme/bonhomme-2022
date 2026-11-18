@@ -1,28 +1,34 @@
 import { Link, Box, Text, Heading, GridItem, Flex } from "@chakra-ui/react"
-import { useQuery } from "@tanstack/react-query"
 import Head from "next/head"
 import { Grid } from "../components/Grid"
 import { Experience } from "../components/Experience"
 import Cursor from "../components/Cursor"
 import { Avatar } from "../components/Avatar"
 
-export default function Home() {
-  const { data: reads = [] } = useQuery({
-    queryKey: ["arena-reads"],
-    queryFn: async () => {
-      const res = await fetch(
-        "https://api.are.na/v3/channels/reads-nz-i4lkqt9a/contents?per=5&sort=position_desc"
-      )
-      const data = await res.json()
-      console.log(data.data)
-      return (data.data || []).filter((block) => block.type === "Link")
-    },
-  })
+const ARENA_CHANNEL = "https://www.are.na/max-bonhomme/reads-nz-i4lkqt9a"
+
+// Rendered server-side so crawlers see the reads; refreshed at most hourly.
+export async function getStaticProps() {
+  let reads = []
+  try {
+    const res = await fetch(
+      "https://api.are.na/v3/channels/reads-nz-i4lkqt9a/contents?per=5&sort=position_desc"
+    )
+    const data = await res.json()
+    reads = (data.data || [])
+      .filter((block) => block.type === "Link" && block.source?.url)
+      .map((block) => ({ id: block.id, title: block.title, url: block.source.url }))
+  } catch {}
+  return { props: { reads }, revalidate: 3600 }
+}
+
+export default function Home({ reads }) {
 
   return (
     <>
       <Head>
         <title>Bonhomme - Developer</title>
+        <link rel="canonical" href="https://bonhomme.lol/" />
       </Head>
       <Cursor />
 
@@ -157,30 +163,25 @@ export default function Home() {
           {reads.length > 0 && (
             <>
               <Heading as="h2" size="md" mt={14} mb={10}>
-                Latest reads
+                Latest reads{" "}
+                <Link href={ARENA_CHANNEL} isExternal fontSize="md" fontWeight="normal" color="white" opacity={0.5}>
+                  (see full list)
+                </Link>
               </Heading>
 
               <Flex flexDirection="column" gap={4}>
                 {reads.map((block) => (
-                  <Link key={block.id} href={block.source?.url} isExternal _hover={{ textDecoration: "none" }} textDecoration="none" role="group">
+                  <Link key={block.id} href={block.url} isExternal _hover={{ textDecoration: "none" }} textDecoration="none" role="group">
                     <Text as="span" color="white" _groupHover={{ textDecoration: "underline" }}>
                       {block.title}
                     </Text>
-                    {block.source?.url && (
-                      <Text as="span" color="white" opacity={0.5}>
-                        {" — "}
-                        {new URL(block.source.url).hostname.replace("www.", "")}
-                      </Text>
-                    )}
+                    <Text as="span" color="white" opacity={0.5}>
+                      {" — "}
+                      {new URL(block.url).hostname.replace("www.", "")}
+                    </Text>
                   </Link>
                 ))}
               </Flex>
-              {/* <Experience
-                side=""
-                title="View all"
-                href="https://www.are.na/max-bonhomme/reads-nz-i4lkqt9a"
-                mb={4}
-              /> */}
             </>
           )}
         </Box>
